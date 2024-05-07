@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 import { Content, KeyTextField } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import gsap from "gsap";
+import gsap, { random } from "gsap";
 
 /**
  * Props for `Hero`.
@@ -33,8 +33,31 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           x: 0,
           opacity: 1,
           rotate: 0,
+          ease: "elastic.out(1,0.3)",
+          duration: 1,
+          transformOrigin: "left top",
+          delay:0.5,
+          stagger: {
+            each: 0.1,
+            from: "random"
+
+          },
+
         }
       );
+
+      tl.fromTo(".job-title",{
+        y:20,
+        opacity:0,
+        scale:1.2
+      },{
+        opacity:1,
+        y:0,
+        duration:1,
+        scale:1,
+        ease: "elastic.out(1,0.3)",
+
+      })
     }, component);
     return () => ctx.revert();
   }, []);
@@ -73,7 +96,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="block bg-gradient-to-tr from-green-500 via-green-200 to-green-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-100 md:text-4xl">
+          <span className="job-title block bg-gradient-to-tr from-green-500 via-green-200 to-green-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
             {slice.primary.tag_line}
           </span>
         </div>
