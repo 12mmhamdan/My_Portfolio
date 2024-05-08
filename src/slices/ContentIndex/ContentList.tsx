@@ -150,7 +150,7 @@ export default function ContentList({
                   itemsRef.current[index] = el;
                 }}
                 onMouseEnter={() => onMouseEnter(index)}
-                className="list-item opacity-0"
+                className="list-item opacity-0f"
               >
                 <Link
                   href={urlPrefix + "/" + item.uid}

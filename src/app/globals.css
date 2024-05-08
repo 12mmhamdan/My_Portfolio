@@ -1,4 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants
+@tailwind variants;
+
+.background-gradient {
+    background: radial-gradient(
+      circle at top center,
+      hsla(222, 80%, 60%, 0.5) 0%,
+      hsla(222, 0%, 0%, 0) 50%,
+      hsla(222, 0%, 0%, 0) 100%
+    );
+  }
