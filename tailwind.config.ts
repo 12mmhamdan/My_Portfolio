@@ -10,6 +10,6 @@ const config: Config = {
   theme: {},
   plugins: [
     require('@tailwindcss/typography')
-  ],
+  ], 
 };
 export default config;
