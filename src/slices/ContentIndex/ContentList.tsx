@@ -33,6 +33,7 @@ export default function ContentList({
 
   const urlPrefix = contentType === "Blog" ? "/blog" : "/project";
 
+
   useEffect(() => {
     // Animate list-items in with a stagger
     let ctx = gsap.context(() => {
